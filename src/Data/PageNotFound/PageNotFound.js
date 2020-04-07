@@ -1,36 +1,36 @@
-import React, {Component, Fragment, useEffect} from "react"
+import React, { useEffect } from "react"
 import "./PageNotFound.css"
 
 import Page404 from "../Assets/Images/PageNotFound/404Page.svg"
 
-import { Typography, Button } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 
 
 const PageNotFound = (props) => {
 
-  useEffect(() =>{
+  useEffect(() => {
     props.PageNotFoundHandler();
   })
 
-    return (
-      <div className="NotFoundBody">
-        <div className="Image">
+  return (
+    <div className="NotFoundBody">
+      <div className="Image">
 
-          <img src={Page404} alt="404 Background" />
-          </div>
-          <div className="Button">
-          <Button
-            onClick={() => {
-              window.location.replace("/");
-            }}
-          >
-            Return Home
+        <img src={Page404} alt="404 Background" />
+      </div>
+      <div className="Button">
+        <Button
+          onClick={() => {
+            window.location.replace("/");
+          }}
+        >
+          Return Home
           </Button>
-          </div>
-        </div>
+      </div>
+    </div>
 
-        )
+  )
 }
 
 export default PageNotFound

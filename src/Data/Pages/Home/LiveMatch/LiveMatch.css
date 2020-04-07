@@ -47,6 +47,8 @@
 .backgroundImg {
   filter: blur(4px);
   -webkit-filter: blur(4px);
+
+  transform: scale(1.03);
   overflow: hidden;
 }
 

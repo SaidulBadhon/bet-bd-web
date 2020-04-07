@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const LiveMatchContentLoader = (props) => {
-  const [isAddMode, setIsAddMode] = useState(true);
+  const [isAddMode, setIsAddMode] = useState(false);
 
   const BetNowButtonHandler = () => {
     setIsAddMode(true);
@@ -25,6 +25,22 @@ const LiveMatchContentLoader = (props) => {
 
   return (
     <Fragment>
+
+      <BetNow
+        visible={isAddMode}
+        HideBetNow={HideBetNow}
+        background={props.item.backgroundImg}
+        team1Img={props.item.team1Img}
+        team1Name={props.item.team1Name}
+        team2Img={props.item.team2Img}
+        team2Name={props.item.team2Name}
+
+        date={props.item.date}
+        time={props.item.time}
+        liveState={props.item.liveState}
+        isLive={props.item.isLive}
+      />
+
       <div className="Contener-Box">
         <div className="Image">
           <img className="backgroundImg" src={props.item.backgroundImg} />
@@ -85,12 +101,12 @@ const LiveMatchContentLoader = (props) => {
                 icon={faCircle}
               />
             ) : (
-              <FontAwesomeIcon
-                style={{ color: "rgba(220, 20, 00, 1)" }}
-                size="xs"
-                icon={faCircle}
-              />
-            )}{" "}
+                <FontAwesomeIcon
+                  style={{ color: "rgba(220, 20, 00, 1)" }}
+                  size="xs"
+                  icon={faCircle}
+                />
+              )}{" "}
             {props.item.liveState}
           </Typography>
 
@@ -99,18 +115,14 @@ const LiveMatchContentLoader = (props) => {
               Bet Now !
             </Button>
           ) : (
-            <Button disabled="true" variant="contained">
-              Bet Now !
-            </Button>
-          )}
+              <Button disabled="true" variant="contained">
+                Bet Now !
+              </Button>
+            )}
         </div>
       </div>
 
-      <BetNow
-        visible={isAddMode}
-        HideBetNow={HideBetNow}
-        Bacground={props.item.backgroundImg}
-      />
+
     </Fragment>
   );
 };

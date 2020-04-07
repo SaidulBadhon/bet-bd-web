@@ -47,6 +47,13 @@ const Header = (props) => {
             </Button>
             <Button
               onClick={() => {
+                window.location.replace("/About");
+              }}
+            >
+              About
+            </Button>
+            <Button
+              onClick={() => {
                 window.location.replace("/LiveMatch");
               }}
             >
