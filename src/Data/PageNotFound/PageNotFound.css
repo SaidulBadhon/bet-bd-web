@@ -1,0 +1,22 @@
+.NotFoundBody {
+  padding-top: 100px;
+  width: 100%;
+  height: 85vh;
+}
+
+.NotFoundBody .Image img {
+  width: 600px;
+}
+
+
+.NotFoundBody .Button{
+  margin-top: 40px;
+}
+
+.NotFoundBody .Button Button {
+  border-radius: 20px;
+  padding-top: 10px;
+  background-color: #dc143c;
+  color: white;
+  width: 250px;
+}
