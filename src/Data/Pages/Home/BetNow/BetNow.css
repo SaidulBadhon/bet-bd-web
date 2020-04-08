@@ -33,7 +33,7 @@
   position: absolute;
   background-color: rgb(255, 255, 255);
   width: 650px;
-  height: 500px;
+  height: 600px;
   border-radius: 10px;
   display: flex;
   z-index: 3;
@@ -74,7 +74,7 @@
 }
 
 .BetNow .Body .TeamsVersus {
-  top: 25%;
+  top: 20%;
   width: 350px;
 
   height: 200px;
@@ -83,8 +83,9 @@
   transform: scale(1.5);
 }
 
+
 .BetNow-TeamNameText {
-  color: #333;
+  color: #efefef;
   padding-top: 5px;
   
 }
@@ -104,12 +105,75 @@
   margin-top: -5px;
   padding-bottom: 10px;
 }
-
-.BetNow-Data .Data3  {
-  position: relative;
-  top: 50%;
+.BetNow-Data .Data2 {
+  margin-top:25px
 }
-  .BetNow-Data .Data3 .TeamButton {
+
+.BetNow-Data .Data3 {
+
+margin-top:25px
+}
+
+.BetNow-Data .Data3 .AmmountBar .AmmountButton {
+  margin: 0px 10px;
+  border-radius: 20px;
+  background-color: #c3509b;
+  color: white;
+  width:75px;
+
+  transition: all .2s ease-in-out;
+}
+
+.BetNow-Data .Data3 .AmmountBar .AmmountButton:hover {
+  background-color:purple;
+}
+
+
+
+
+.BetNow-Data .Data4  {
+  padding-top: 25px;
+}
+
+
+  .BetNow-Data .Data5  {
+  position: relative;
+  top: 20%;
+}
+  .BetNow-Data .Data5 .TeamButton {
   margin:0px 10px;
   width: 200px;
+}
+
+
+
+
+
+
+
+.BetNowMain .Background {
+  position: absolute;
+  z-index: -100;
+  
+}
+
+.BetNowMain .Background img {
+  width: 100%;
+  height: 300px;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+
+  transform: scale(1.03);
+  overflow: hidden;
+
+}
+
+.BetNowMain .Background .imgCutter {
+  position: absolute;
+  z-index: 0;
+  top: 300px;
+
+  background-color: white;
+  width: 100%;
+  height: 300px;
 }

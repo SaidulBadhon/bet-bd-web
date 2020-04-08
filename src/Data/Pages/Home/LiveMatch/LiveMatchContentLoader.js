@@ -39,6 +39,9 @@ const LiveMatchContentLoader = (props) => {
         time={props.item.time}
         liveState={props.item.liveState}
         isLive={props.item.isLive}
+
+        curBalance={props.curBalance}
+        updateCurBalance={props.updateCurBalance}
       />
 
       <div className="Contener-Box">

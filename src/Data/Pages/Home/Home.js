@@ -15,7 +15,7 @@ function Home(props) {
         <Toolbar />
 
         <div className="Home-Body">
-          <LiveMatch />
+          <LiveMatch curBalance={props.curBalance} updateCurBalance={props.updateCurBalance} />
         </div>
       </div>
     </Fragment>

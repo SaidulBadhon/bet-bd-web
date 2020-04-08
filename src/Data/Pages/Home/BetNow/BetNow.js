@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./BetNow.css";
 
 import { Typography, Button, IconButton } from "@material-ui/core";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faTimesCircle, faCalendarAlt,
   faClock,
@@ -12,6 +13,16 @@ import {
 
 
 const BetNow = (props) => {
+
+  const [selectedAmount, setSelectedAmount] = useState(0);
+
+
+
+  function selectedAmountHandler(selectedItem) {
+
+    setSelectedAmount(selectedItem);
+  }
+
   return (
     <Fragment>
       {props.visible ? (
@@ -21,7 +32,7 @@ const BetNow = (props) => {
             <div className="Header">
               <div className="CloseButton">
                 <IconButton>
-                  <FontAwesomeIcon icon={faTimesCircle} color="rgba(50,50,50,.75)" onClick={props.HideBetNow} />
+                  <FontAwesomeIcon icon={faTimesCircle} color="rgba(230, 230, 230, 1)" onClick={props.HideBetNow} />
                 </IconButton>
               </div>
             </div>
@@ -38,8 +49,9 @@ const BetNow = (props) => {
                   </Typography>
                 </div>
 
+
                 <div className="vs">
-                  <Typography variant="h3" className="title" style={{ fontWeight: 500, color: "rgba(56,56,56, .5)", marginTop: "25px" }}>
+                  <Typography variant="h3" className="title" style={{ fontWeight: 500, color: "rgba(256,256,256, .5)", marginTop: "25px" }}>
                     vs
                   </Typography>
                 </div>
@@ -50,9 +62,7 @@ const BetNow = (props) => {
                   </Typography>
                 </div>
 
-                {/*<div className="Background">
-                <img src={props.background} />
-              </div>*/}
+
 
               </div>
 
@@ -60,14 +70,14 @@ const BetNow = (props) => {
               <div className="BetNow-Data">
 
                 <div className="Data">
-                  <Typography variant="subtitle2">
+                  <Typography variant="subtitle2" style={{ color: "rgba(230, 230, 230, 1)" }}>
                     <FontAwesomeIcon
-                      style={{ color: "rgba(50, 50, 50, 1)" }}
+                      style={{ color: "rgba(206, 206, 206, .75)" }}
                       icon={faCalendarAlt}
                     />
             &nbsp; {props.date}&nbsp;&nbsp;
             <FontAwesomeIcon
-                      style={{ color: "rgba(50, 50, 50, 1)" }}
+                      style={{ color: "rgba(206, 206, 206, .75)" }}
                       icon={faClock}
                     />{" "}
                     {props.time}&nbsp;&nbsp;&nbsp;&nbsp;
@@ -95,12 +105,45 @@ const BetNow = (props) => {
                     Select how much money you want to bit and select a team that you think will win and you can earn up to 200%.
                     </Typography>
                 </div>
-                <div className="Data3">
 
-                  <Button className="TeamButton" variant="contained" color="primary" >{props.team1Name}</Button>
-                  <Button className="TeamButton" variant="contained" color="secondary" >{props.team2Name}</Button>
+                <div className="Data3">
+                  <div className="AmmountBar">
+                    <Button className="AmmountButton" onClick={() => { selectedAmountHandler(50); }} > 50৳ </Button>
+                    <Button className="AmmountButton" onClick={() => { selectedAmountHandler(100); }} > 100৳ </Button>
+                    <Button className="AmmountButton" onClick={() => { selectedAmountHandler(200); }} > 200৳ </Button>
+                    <Button className="AmmountButton" onClick={() => { selectedAmountHandler(500); }} > 500৳ </Button>
+                    <Button className="AmmountButton" onClick={() => { selectedAmountHandler(1000) }} > 1000৳ </Button>
+
+                  </div>
+                </div>
+
+                <div className="Data4">
+
+                  <Typography variant="subtitle2">
+                    Total Stake : {selectedAmount} ৳
+                  </Typography>
+
+                  <Typography variant="subtitle2">
+                    Possible Winning (upto) : {selectedAmount * 2} ৳
+                  </Typography>
+
+                  <Typography variant="subtitle2">
+                    Current Balance : {props.curBalance} ৳
+                  </Typography>
+                </div>
+
+                <div className="Data5">
+
+                  <Button className="TeamButton" variant="contained" color="primary" onClick={() => { props.updateCurBalance(selectedAmount) }} >{props.team1Name}</Button>
+                  <Button className="TeamButton" variant="contained" color="secondary" onClick={() => { props.updateCurBalance(selectedAmount) }} >{props.team2Name}</Button>
+
 
                 </div>
+
+
+
+
+
               </div>
 
 
@@ -108,9 +151,16 @@ const BetNow = (props) => {
 
 
 
-
-
             </div>
+
+
+
+            <div className="Background">
+              <img src={props.background} />
+              <div className="imgCutter"></div>
+            </div>
+
+
           </div>
         </div>
       ) : (
