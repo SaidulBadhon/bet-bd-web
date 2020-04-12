@@ -26,8 +26,6 @@ const LiveMatch = (props) => {
         }
         return liveMatch;
       });
-      console.log(prevState.liveMatchs);
-      console.log(updatedLiveMatchs);
       return {
         liveMatchs: updatedLiveMatchs,
       };
@@ -51,7 +49,8 @@ const LiveMatch = (props) => {
           icon={faRedoAlt}
           size="1x"
           color="#9fa0a2"
-          style={{ paddingLeft: "25px", paddingTop: "2px" }}
+          style={{ marginLeft: "25px", marginTop: "2px" }}
+          id="Reload-Icon"
         />
         <Typography
           variant="subtitle2"

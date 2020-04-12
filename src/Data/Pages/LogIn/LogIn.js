@@ -1,15 +1,22 @@
-import React, { Component, Fragment } from "react"
+import React, { Component, Fragment, useEffect } from "react"
 import "./LogIn.css";
 
 import { Button, TextField, Typography } from "@material-ui/core/";
 
+import { login } from "../../../Server/Components/UserFunction.js"
+
+
 const LogIn = (props) => {
-  const OnSubmit = (gol) => {
-    console.log("GOL " + gol)
-  }
+
+  useEffect(() => {
+
+    function dasdsadsa() {
+      props.IsLogedinHandler();
+    }
+  }, [])
 
   return (
-    <Fragment>
+    <Fragment >
       <div className="LogInForm">
         <div className="BaseContainer">
           <div className="content">
@@ -18,7 +25,8 @@ const LogIn = (props) => {
             </Typography>
 
 
-            <form onSubmit={OnSubmit}>
+            {/*</div><form onSubmit={this.onSubmit}>*/}
+            <form onSubmit={props.IsLogedinHandler}>
 
 
               <div className="FormFields">
@@ -27,7 +35,7 @@ const LogIn = (props) => {
                   className="TextField"
                   variant="outlined"
                   margin="normal"
-                  required
+                  /*required*/
                   fullWidth
                   id="email"
                   label="Email Address"
@@ -63,6 +71,7 @@ const LogIn = (props) => {
                 type="submit"
 
                 variant="contained"
+
                 color="secondary" >
                 Log In
               </Button>
@@ -71,7 +80,7 @@ const LogIn = (props) => {
 
         </div>
       </div>
-    </Fragment>
+    </Fragment >
   )
 }
 

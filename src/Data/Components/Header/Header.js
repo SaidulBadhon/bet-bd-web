@@ -61,7 +61,7 @@ const Header = (props) => {
             </Button>
             <Button
               onClick={() => {
-                window.location.replace("Balance");
+                window.location.replace("/Balance");
               }}
             >
               Balance
@@ -73,6 +73,14 @@ const Header = (props) => {
               }}
             >
               My Statement
+            </Button>
+
+            <Button
+              onClick={() => {
+                props.IsLogedinHandler()
+              }}
+            >
+              Log out
             </Button>
           </div>
 
@@ -90,7 +98,7 @@ const Header = (props) => {
             </div>
 
             <div className="UserLogo">
-              <img src="https://randomuser.me/api/portraits/men/75.jpg" />
+              <img src="https://i.imgur.com/dPFXOKH.jpg" />
             </div>
           </div>
         </div>
